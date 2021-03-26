@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Employee Data</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Employee Data</h1>
+      <form id="employee_form">
+        <div class="form-group">
+          <label>Employee Name</label>
+          <input type="text" class="form-control" name="tName" id="employeeName" placeholder="Employee Name" />
+        </div>
+        <div class="form-group">
+          <label>Birth Date</label>
+          <input type="text" class="form-control" name="tBirthDate" id="birthDate" placeholder="Birth Date" />
+        </div>
+        <div class="form-group">
+          <label>Gender</label>
+          <input type="radio" class="form-control" name="rGender" id="gender" value="Male">Male</input>
+          <input type="radio" class="form-control" name="rGender" id="gender" value="Female">Female</input>
+        </div>
+        <div class="form-group">
+          <label>Hobby</label>
+          <input type="checkbox" class="form-control" name="cHobby[]" id="hobby" value="Soccer">Soccer</input>
+          <input type="checkbox" class="form-control" name="cHobby[]" id="hobby" value="Volleyball">Volleyball</input>
+          <input type="checkbox" class="form-control" name="cHobby[]" id="hobby" value="Golf">Golf</input>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary" name="bSubmit" id="submit" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+

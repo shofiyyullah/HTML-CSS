@@ -1,0 +1,300 @@
+<html>
+<head>
+    <title>Post Test JQuery</title>
+	
+	<link href="style.css" rel="stylesheet">
+	<link href="datepicker.css" rel="stylesheet">	
+	<link href="jquery.modal.css" rel="stylesheet">
+	
+    <script src="jquery.js"></script>
+    <script src="datepicker.js"></script>	  
+    <script src="jquery.modal.min.js"></script>
+</head>
+<body>
+<form id="partsForm">
+	<div style="width: 100%;">
+		<div style="margin-bottom: 5px;">
+            <span style="font-size: 20px;"><b>JQuery Test</b></span>
+        </div>
+		<div style="border-style: solid; border-width: 1px;">
+			<div style="margin: 5px; border-bottom: 1px solid">
+				<span style="font-size: 15px;">General Data</span>
+			</div>
+            <div style="float: left; width: 49%; padding: 5px; ">
+                <div style="width: 100%; margin-bottom: 5px;">
+                    <div style="float: left; width: 30%; text-align: right;">PCI No :</div>
+                    <div style="float: left; width: 68%; padding-left: 10px;">
+                        <input type="text" name="nPCI" id="PCI">
+                        <input type="hidden" name="nhPCI" id="hPCI">
+                    </div>
+                    <div style="clear: left;"></div>
+                </div>
+                <div style="width: 100%; margin-bottom: 5px;">
+                    <div style="float: left; width: 30%; text-align: right;">PCI Date :</div>
+                    <div style="float: left; width: 68%; padding-left: 10px;">
+                        <input type="text" name="ndate" id="date">
+						<input type="hidden" name="nhPCI" id="hDate">
+                    </div>
+                    <div style="clear: left;"></div>
+                </div>
+                <div style="width: 100%; margin-bottom: 5px;">
+                    <div style="float: left; width: 30%; text-align: right;">ECI No :</div>
+                    <div style="float: left; width: 68%; padding-left: 10px;">
+                        <input type="text" name="nECI" id="ECI">
+						<input type="hidden" name="nheci" id="hECI">
+                    </div>
+                    <div style="clear: left;"></div>
+                </div>
+                <div style="width: 100%;">
+                    <div style="float: left; width: 30%; text-align: right;">Importer Country :</div>
+                    <div style="float: left; width: 68%; padding-left: 10px;">
+						<select name="nImporter" id="Importer" style="padding: 2px;">
+                            <option checked>Select an Option</option>
+                            <option value="Amerika">Amerika</option>
+                            <option value="Brunei">Brunei</option>
+                            <option value="Ceko">Ceko</option>
+							<option value="Denmark">Denmark</option>
+							<option value="Indonesia">Indonesia</option>
+                        </select>
+                    </div>
+					<div id="button-group" style="width: 100%;">
+						<div style="float: left; width: 15%; padding-left: 10px; margin-left:200px; margin-top:10px;">
+							<button type="button" id="btnNew" onclick="btnNewOnclick();">NEW</button>
+						</div>	
+						<div style="float: left; width: 15%; padding-left: 10px; margin-top:10px">
+							<button type="button" id="btnAdd" >ADD</button>	
+						</div>
+						<div style="float: left; width: 20%; padding-left: 10px; margin-top:10px">
+							<button type="button" id="btnEdit" >EDIT</button>	
+						</div>
+					</div>
+					<div style="clear: left;"></div>
+                </div>
+				
+            </div>
+            <div style="float: left; width: 49%; padding: 5px;	">
+                <div style="width: 100%; margin-bottom: 5px;">
+                    <div style="float: left; width: 30%; text-align: right;" >Description :</div>
+                    <div style="float: left; width: 68%; padding: 0px 6px;">
+						<textarea name="ndescription" id="description" ></textarea>
+                    </div>
+                    <div style="clear: left;"></div>
+                </div>
+				<div style="width: 100%;">
+                    <div style="float: left; width: 30%; text-align: right;">Others :</div>
+                    <div style="float: left; width: 68%; padding-left: 10px;">
+                        <input type="checkbox" id="cbAll" > Select All<br/>
+                        <input type="checkbox" id="ck1" value="Part No Change" class="cb" > Part No Change<br/>
+                        <input type="checkbox" id="ck2" value="New Part" class="cb" > New Part<br/>
+                        <input type="checkbox" id="ck3" value="Localization" class="cb" > Localization Part<br/>
+                    </div>
+                </div>
+                <div style="width: 100%; margin-bottom: 5px;">
+                    <div style="float: left; width: 30%; text-align: right;">Status Part :</div>
+                    <div style="float: left; width: 68%; padding-left: 10px;">
+                        <input type="radio" name="nstatus" value="Local" id="statusLocal" >Local
+                        <input type="radio" name="nstatus" value="Import" id="statusImport" >Import
+                    </div>
+					
+					<div id="button-group" style="width: 100%;">
+						<div style="float: left; width: 15%; padding-left: 10px; margin-left:200px; margin-top:10px;">
+							<button type="button" id="btnSave" >SAVE</button>
+						</div>	
+						<div style="float: left; width: 15%; padding-left: 10px; margin-top:10px">
+							<button type="button" id="btnReset"  >RESET</button>	
+						</div>
+					</div>
+                    <div style="clear: left;"></div>
+                </div>
+            </div>
+            <div style="clear: left;"></div>		
+		</div>	
+		
+		<!-- detail popup -->
+		<div id="create-popup" class="modal fade">
+			<p><h3>Data</h3></p>
+			<p>PCI NO               : <span id="pPCI"></span></p>
+			<p>PCI DATE            : <span id="pDate"></span></p>
+			<p>ECI NO               : <span id="pECI"></span></p>
+			<p>Importer Country : <span id="pCountry"></span></p>
+			<p>Others             : <span id="pOther"></span></p>
+			<p>Status part       : <span id="pStatus"></span></p>
+			<p>Has been <strong><span id="pResult"></span></strong></p>
+			
+			<div id="popup-button" align="right">
+				<a href="#create-popup" rel="modal:close"><button id="BtnClose" style="background-color: #ff0000;">Close</button></a>
+			</div>
+		</div>
+</form>		
+</body>
+<script>
+	var onBtnClick = "";
+	
+	$(document).ready(function () {
+		$('#create-popup').hide();
+		
+		$("#cbAll").click(function () {
+            $('.cb').prop('checked', this.checked);
+        });
+		
+		$("#date").datepicker({
+			autoclose: true,
+			format: 'dd-mm-yyyy'
+		});		
+		
+		initialScreen();
+		clearForm();
+	});
+	
+	function initialScreen()
+	{
+		$('#PCI').prop('disabled',true);
+		$('#date').prop('disabled',true);
+		$('#ECI').prop('disabled',true);
+		$('#Importer').prop('disabled',true);
+		$('#description').prop('disabled',true);
+		$('input[type=checkbox]').prop('disabled',true);
+		$('input[name=nstatus]').prop('disabled',true);
+		
+		$('#btnNew').prop('disabled',true);
+		$('#btnEdit').prop('disabled',true);
+		$('#btnSave').prop('disabled',true);
+		$('#btnReset').prop('disabled',true);
+		
+		$('#btnNew').css('background-color','#AAAAAA');
+		$('#btnEdit').css('background-color','#AAAAAA');
+		$('#btnSave').css('background-color','#AAAAAA');
+		$('#btnReset').css('background-color','#AAAAAA');
+		$('#btnAdd').css('background-color','#00FF00');
+	}
+	
+	$('#btnAdd').click(function(){
+		$('#btnNew').prop('disabled',false);
+		$('#btnEdit').prop('disabled',false);
+		
+		$('#btnNew').css('background-color','#006400');
+		$('#btnEdit').css('background-color','#FFA500');
+	});
+	
+	function btnNewOnclick(){
+		onBtnClick = "ADD";
+		enabledForm();
+	}
+	
+	function enabledForm()
+	{
+		$('#PCI').prop('disabled',false);
+		$('#date').prop('disabled',false);
+		$('#ECI').prop('disabled',false);
+		$('#Importer').prop('disabled',false);
+		$('#description').prop('disabled',false);
+		$('input[type=checkbox]').prop('disabled',false);
+		$('input[name=nstatus]').prop('disabled',false);
+	
+		$('#btnSave').prop('disabled',false);
+		$('#btnReset').prop('disabled',false);
+	
+		$('#btnSave').css('background-color','#0000FF');
+		$('#btnReset').css('background-color','#FF0000');
+	}
+	
+	$('#btnReset').click(function(){
+		clearForm();
+	});
+	
+	function clearForm()
+	{
+		$('#PCI').val('');
+		$('#date').val('');
+		$('#ECI').val('');
+		$('#Importer').val('');
+		$('#description').val('');
+		
+		$('input[type=checkbox]').prop('checked',false);
+		$('input[name=nstatus]').prop('checked',false);
+	}
+	
+	$('#btnSave').click(function(){
+		var isValid = validation();
+		
+		if(!isValid)
+		{
+			var vPic = $('#PCI').val();
+			var vDate = $('#date').val();
+			var vEci = $('#ECI').val();
+			var vImporter = $('#Importer').val();
+			var vDesc = $('#description').val();
+			
+			var text="<br/>";
+			$('input[class="cb"]:checked').each(function() {
+				text += (this.value) + "<br/>";
+			});
+			
+			var vStatus = $('input[name="nstatus"]:checked').val();
+			
+			$("#pPCI").text(vPic);
+			$("#pDate").text(vDate);
+			$("#pECI").text(vEci);
+			$("#pCountry").text(vImporter);
+			$("#pOther").html(text);
+			$("#pStatus").text(vStatus);
+			
+			if(onBtnClick == "ADD")
+			{
+				$('#pResult').text('Inserted!');
+			}
+			if(onBtnClick == "EDIT")
+			{
+				$('#pResult').text('Updated!');
+			}
+		
+			$('#create-popup').modal();
+		}
+		else
+		{
+			alert('Please fill out data!');
+		}
+	});
+	
+	$('#btnEdit').click(function(){
+		onBtnClick = "EDIT";
+		enabledForm();
+		
+		$('#PCI').val('201300001');
+		$('#date').val('07-12-2016');
+		$('#ECI').val('201100122');
+		$('#Importer').val('Indonesia');
+		$('#description').val('All parts are imported from Indonesia');
+		
+		$('#ck2').prop('checked',true);
+		$('#ck3').prop('checked',true);
+		$('#statusLocal').prop('checked',true);
+	});
+	
+	function validation()
+	{
+		var vPic = $('#PCI').val();
+		var vDate = $('#date').val();
+		var vEci = $('#ECI').val();
+		var vImporter = $('#Importer').val();
+		var vDesc = $('#description').val();				
+		var vStatus = $('input[name="nstatus"]:checked').val();
+		
+		if((vPic!='' && vPic!=null) &&
+		   (vDate!='' && vDate!=null) &&
+		   (vEci!='' && vEci!=null) &&
+		   (vImporter != '' && vImporter != null) &&
+		   (vDesc != '' && vDesc != null) &&
+		   (vStatus != '' && vStatus != null && vStatus != undefined)
+		)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	
+</script>
+</html>

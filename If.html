@@ -1,0 +1,28 @@
+<html>
+<body>
+
+<p>Input the course score:</p>
+
+<input id="Score" placeholder="Total score" />
+
+<button onclick="onClickResult()">Result</button>
+
+<p id="result"></p>
+	
+</body>
+</html>
+
+<script>
+function onClickResult() {
+    var Scr, Res;
+    Scr = Number(document.getElementById("Score").value);
+    if (isNaN(Scr)) {
+        Res = "Error in input";
+    } else if  (Scr<70) {
+		Res = "Failed";
+	} else {
+        Res = "Passed";
+    }
+    document.getElementById("result").innerHTML = Res;
+}
+</script>

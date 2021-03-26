@@ -1,0 +1,58 @@
+<html>   
+<head>  
+<meta charset=utf-8 />  
+<title>Arithmatic operators between two numbers </title>  
+<style type="text/css">  
+body {margin: 30px;}  
+</style>
+</head>  
+<body>  
+<form>  
+1st Number : <input type="text" id="firstNumber" /><br>
+<br>  
+2nd Number: <input type="text" id="secondNumber" /><br>  
+<br>
+<input type="button" onClick="add()" Value="+" />  
+<input type="button" onClick="substract()" Value="-" />  
+<input type="button" onClick="multiply()" Value="X" />  
+<input type="button" onClick="divide()" Value="/" />  
+</form>  
+<p>The Result is : <br>  
+<span id = "result"></span>  
+</p>  
+</body>  
+</html>
+
+	<script>
+	function add()   
+	{   
+		var	num1 = document.getElementById("firstNumber").value;  
+		var	num2 = document.getElementById("secondNumber").value;
+		var num3 = +num1 + +num2;	
+		document.getElementById("result").innerHTML = num3;  
+	} 
+
+	function substract()   
+	{   
+			num1 = document.getElementById("firstNumber").value;  
+			num2 = document.getElementById("secondNumber").value;  
+			var num3 = num1 - num2;	
+			document.getElementById("result").innerHTML = num3;  
+	} 
+	
+	function multiply()  
+	{  
+			num1 = document.getElementById("firstNumber").value;  
+			num2 = document.getElementById("secondNumber").value;  
+			var num3 = num1 * num2;	
+			document.getElementById("result").innerHTML = num3;
+	}  	
+
+	function divide()   
+	{   
+			num1 = document.getElementById("firstNumber").value;  
+			num2 = document.getElementById("secondNumber").value;  
+			var num3 = num1 / num2;	
+			document.getElementById("result").innerHTML = num3;
+	} 
+	</script>   

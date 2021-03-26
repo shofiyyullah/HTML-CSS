@@ -1,0 +1,55 @@
+<html>
+<body>
+
+<h1>JavaScript Exercise</h1>
+
+<p>Course participant:</p>
+
+<p id="demo"></p>
+<p id="report"></p>
+<p id="Score"></p>
+
+</html>
+<script>
+var courses = [['SQL', 96], ['HTML', 77], ['JQuery', 76]
+            , ['C#', 98], ['MVC', 88]];  
+var Averages = 0;  
+var Grade= "";
+var text = "<ul>";  
+
+var rpt = "";
+  
+for (var i=0; i < courses.length; i++) {  
+        Averages += courses[i][1];  
+        var avg = (Averages/courses.length);
+		text += "<li>" + courses[i] + "</li>";
+	
+}  
+
+text += "</ul>";
+if (avg >90)
+{
+	Grade = "A"
+}
+else if (avg >80)
+{
+	Grade = "B"
+}
+else if (avg >70)
+{
+	Grade = "C"
+}
+else if (avg >60)
+{
+	Grade = "D"
+}
+else
+{
+	Grade = "E"
+}
+
+rpt = "Averages score for this student is : " + avg + "With Grade:" + Grade;
+
+document.getElementById("report").innerHTML = rpt;
+document.getElementById("demo").innerHTML = text;
+</script>

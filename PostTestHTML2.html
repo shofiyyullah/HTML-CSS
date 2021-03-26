@@ -1,0 +1,404 @@
+<html>
+<link href="style.css" rel="stylesheet">
+<head>
+    <title>Post Test HTML</title>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript"></script>
+</head>
+<body>
+	<div style="width: 100%;">
+		<div style="margin-bottom: 5px ;">
+            <span style="font-size: 20px;"><b>Header</b></span>
+        </div>
+		<div style="border-style: solid; border-width: 1px;">
+			<div style="margin: 5px;">
+				<span style="font-size: 15px;" id="general">General Data</span>
+			</div>
+            <div style="float: left; width: 49%; padding: 5px;">
+                <div style="width: 100%; margin-bottom: 5px;">
+                    <div style="float: left; width: 30%; text-align: right;">PCI No :</div>
+                    <div style="float: left; width: 68%; padding-left: 10px;">
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div style="clear: left;"></div>
+                </div>
+                <div style="width: 100%; margin-bottom: 5px;">
+                    <div style="float: left; width: 30%; text-align: right;">PCI Date :</div>
+                    <div style="float: left; width: 68%; padding-left: 10px;">
+                        <input type="text" name="birthPlace" id="birthPlace">
+                    </div>
+                    <div style="clear: left;"></div>
+                </div>
+                <div style="width: 100%; margin-bottom: 5px;">
+                    <div style="float: left; width: 30%; text-align: right;">ECI No :</div>
+                    <div style="float: left; width: 68%; padding-left: 10px;">
+                        <input type="text" name="birthDate" id="birthDate">
+                    </div>
+                    <div style="clear: left;"></div>
+                </div>
+                <div style="width: 100%;">
+                    <div style="float: left; width: 30%; text-align: right;">Importer Country :</div>
+                    <div style="float: left; width: 68%; padding-left: 10px;">
+						<select name="marriedFlag" id="marriedFlag" style="padding: 2px;">
+                            <option>Select an Option</option>
+                            <option>Amerika</option>
+                            <option>Brunei</option>
+                            <option>Ceko</option>
+							<option>Denmark</option>
+							<option>Indonesia</option>
+                        </select>
+                    </div>
+                    <div style="clear: left;"></div>
+                </div>
+            </div>
+            <div style="float: left; width: 49%; padding: 5px;">
+                <div style="width: 100%; margin-bottom: 5px;">
+                    <div style="float: left; width: 30%; text-align: right;">Description :</div>
+                    <div style="float: left; width: 68%; padding: 0px 6px;">
+						<textarea name="description" id="description"></textarea>
+                    </div>
+                    <div style="clear: left;"></div>
+                </div>
+				<div style="width: 100%;">
+                    <div style="float: left; width: 30%; text-align: right;">Others :</div>
+                    <div style="float: left; width: 68%; padding-left: 10px;">
+                        <input type="checkbox"> Part No Change<br/>
+                        <input type="checkbox"> New Part<br/>
+                        <input type="checkbox"> Localization Part<br/>
+                    </div>
+                </div>
+                <div style="width: 100%; margin-bottom: 5px;">
+                    <div style="float: left; width: 30%; text-align: right;">Status Part :</div>
+                    <div style="float: left; width: 68%; padding-left: 10px;">
+                        <input type="radio" name="gender" value="Laki-laki">Local
+                        <input type="radio" name="gender" value="Perempuan">Import
+                    </div>
+                    <div style="clear: left;"></div>
+                </div>
+            </div>
+            <div style="clear: left;"></div>
+		</div>	
+		<div style="margin: 5px; border-bottom: 1px solid">
+			<span style="font-size: 15px;" id="general">Distribute</span>
+		</div>
+		<div style="float: left; padding: 5px; width: 49%; margin-top: -12px;">
+			<div style="margin: 5px;">
+				<span style="font-size: 15px;">To</span>
+			</div>
+			<div style="">
+				<table width="100%;" style="border-style: solid; border-width: 1px; margin-top: -5px;">
+					<thead>
+						<tr style="background: #4472C4; color: #fff;">
+							<th align="center">
+								<input id="checkAll" type="checkbox">
+							</th>
+							<th align="center">Organization</th>
+							<th align="center">PIC</th>
+						</tr>
+					</thead>
+					<tbody id="tbody" style="font-size: 12px;">
+						<tr>
+							<td width="40px;" align="center">
+								<input type="checkbox">
+							</td>
+							<td width="300px;">
+								Quality Engineering
+							</td>
+							<td width="">
+								<select style="padding: 2px; width: 80%;">
+									<option>Select PIC</option>
+									<option>Adit</option>
+									<option>Budi</option>
+									<option>Mikel</option>
+								</select>
+							</td>
+						</tr>
+						<tr style="background: #D9E2F3;">
+							<td width="40px;" align="center">
+								<input type="checkbox">
+							</td>
+							<td width="300px;">
+								Assy PxP Line
+							</td>
+							<td width="">
+								<select style="padding: 2px; width: 80%;">
+									<option>Select PIC</option>
+									<option>Adit</option>
+									<option>Budi</option>
+									<option>Mikel</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td width="40px;" align="center">
+								<input type="checkbox">
+							</td>
+							<td width="300px;">
+								Welding Line
+							</td>
+							<td width="">
+								<select style="padding: 2px; width: 80%;">
+									<option>Select PIC</option>
+									<option>Adit</option>
+									<option>Budi</option>
+									<option>Mikel</option>
+								</select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div style="float: left; padding: 5px; width: 49%; margin-top: -12px;">			
+			<div style="margin: 5px;">
+				<span style="font-size: 15px;">CC</span>
+			</div>
+			<div>
+				<table width="100%;" style="border-style: solid; border-width: 1px; margin-top: -5px;">
+					<thead>
+						<tr style="background: #4472C4; color: #fff;">
+							<th align="center">
+								<input id="checkAll" type="checkbox">
+							</th>
+							<th align="center">Organization</th>
+							<th align="center">PIC</th>
+						</tr>
+					</thead>
+					<tbody id="tbody" style="font-size: 12px;">
+						<tr>
+							<td width="40px;" align="center">
+								<input type="checkbox">
+							</td>
+							<td width="300px;">
+								CEVD-Operation
+							</td>
+							<td width="">
+								<select style="padding: 2px; width: 80%;">
+									<option>Select PIC</option>
+									<option>Adit</option>
+									<option>Budi</option>
+									<option>Mikel</option>
+								</select>
+							</td>
+						</tr>
+						<tr style="background: #D9E2F3;">
+							<td width="40px;" align="center">
+								<input type="checkbox">
+							</td>
+							<td width="300px;">
+								CEVD-Logistic
+							</td>
+							<td width="">
+								<select style="padding: 2px; width: 80%;">
+									<option>Select PIC</option>
+									<option>Adit</option>
+									<option>Budi</option>
+									<option>Mikel</option>
+								</select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div style="clear: left;"></div>
+		<div style="margin-bottom: 5px;">
+            <span style="font-size: 20px;"><b>Part</b></span>
+        </div>
+		<div style="border-style: solid; border-width: 1px; padding: 10px;">
+			<table width="100%;" style="border-style: solid; border-width: 1px; table-layout: fixed; display: block; overflow-x: scroll;">
+				<thead>
+					<tr style="background: #4472C4; color: #fff;">
+						<th rowspan="2" colspan="2">Part Number</th>
+						<th rowspan="3">Part Name</th>
+						<th rowspan="2" colspan="2">Destination</th>
+						<th rowspan="2" colspan="2">Supplier</th>
+						<th colspan="4">Weight</th>
+						<th rowspan="2" colspan="2">M3 / Box No</th>
+					</tr>
+					<tr style="background: #4472C4; color: #fff;">
+						<th colspan="2" rowspan="1">PC</th>
+						<th colspan="2" rowspan="1">Box</th>
+					</tr>
+					<tr style="background: #4472C4; color: #fff;">
+						<th width="90px;">Before</th>
+						<th width="90px;">After</th>
+						<th>Before</th>
+						<th>After</th>
+						<th>Before</th>
+						<th>After</th>
+						<th>Before</th>
+						<th>After</th>
+						<th>Before</th>
+						<th>After</th>
+						<th>Before</th>
+						<th>After</th>
+					</tr>
+				</thead>
+				<tbody id="tbody" style="font-size: 12px">
+					<tr>
+						<td>71503-0D310</td>
+						<td>71503-0D310-A</td>
+						<td width="90px;">PAD SUB-ASSY, RR SEAT CUSHION</td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+					</tr>
+					<tr style="background: #D9E2F3;">
+						<td>71511-0D330</td>
+						<td>71511-0D330-A</td>
+						<td width="90px;">PAD, FR SEAT CUSHION, RH</td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+					</tr> 
+					<tr>
+						<td>71512-0D320</td>
+						<td>71512-0D320-A</td>
+						<td width="90px;">PAD, FR SEAT CUSHION, LH</td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+						<td><input type="text" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		</br>
+		<div style="margin-bottom: 5px;">
+            <span style="font-size: 20px;"><b>Data Management & Maintenance</b></span>
+        </div>
+		<div style="border-style: solid; border-width: 1px; padding: 10px; scroll: true;" class="display nowrap">
+			<table width="100%;" style="border-style: solid; border-width: 1px;" >
+				<thead>
+					<tr style="background: #4472C4; color: #fff;">
+						<th  id="action" width="35px" rowspan="2">
+							No
+						</th>                    
+						<th rowspan="2" id="section" style="width:120px;">Section</th>
+						<th rowspan="2" id="jobMainten" style="width:235px;">Job Maintenance</th>
+						<th colspan="2" >Maintenance</th>                                                    
+						<th rowspan="2"  style="width:160px;">PIC</th>
+						<th rowspan="2" id="" style="width:100px;">Schedule</th>
+						<th rowspan="2">Progress</th>
+					</tr>
+					<tr style="background: #4472C4; color: #fff;">
+						<th style="width:30px;">Need</th>
+						<th style="width:40px;">No</th>
+					</tr>
+				</thead>
+				<tbody id="tbody" style="font-size: 12px;">
+					<tr>
+						<td rowspan="3" class="text-center">1</td>
+						<td rowspan="3" class="">PSE</td>
+						<td class="text-left"  id="">Maintain IES / GPAC</td>
+						<td class="text-center"><input type="checkbox" /></td>
+						<td class="text-center"><input type="checkbox" /></td>
+						<td>
+							<select id="cmbPIC" class="form-control chosen-select" style="width: 100%;">
+								<option>Select PIC</option>
+								<option>Adit</option>
+								<option>Budi</option>
+								<option>Mikel</option>
+							</select>
+						</td>
+						<td><input type="text" class="form-control" /></td>
+						<td><input type="text" class="form-control" style="width: 100%;" /></td>
+					</tr>
+					<tr>
+						<td class="text-left"  id="">Data base Cost</td>
+						<td class="text-center"><input type="checkbox" /></td>
+						<td class="text-center"><input type="checkbox" /></td>
+						<td>
+							<select id="cmbPIC" class="form-control chosen-select" style="width: 100%;">
+								<option>Select PIC</option>
+								<option>Adit</option>
+								<option>Budi</option>
+								<option>Mikel</option>
+							</select>
+						</td>
+						<td><input type="text" class="form-control" /></td>
+						<td><input type="text" class="form-control" style="width: 100%;" /></td>
+					</tr>
+				</tbody>
+				<tbody id="tbody" style="font-size: 12px; background: #D9E2F3;">
+					<tr>
+						<td rowspan="3" class="text-center">2</td>
+						<td rowspan="3" class="">Logistic</td>
+						<td class="text-left"  id="">Maintain E-Kanban</td>
+						<td class="text-center"><input type="checkbox" /></td>
+						<td class="text-center"><input type="checkbox" /></td>
+						<td>
+							<select id="cmbPIC" class="form-control chosen-select" style="width: 100%;">
+								<option>Select PIC</option>
+								<option>Adit</option>
+								<option>Budi</option>
+								<option>Mikel</option>
+							</select>
+						</td>
+						<td><input type="text" class="form-control" /></td>
+						<td><input type="text" class="form-control" style="width: 100%;" /></td>
+					</tr>
+					<tr>
+						<td class="text-left"  id="">ICS</td>
+						<td class="text-center"><input type="checkbox" /></td>
+						<td class="text-center"><input type="checkbox" /></td>
+						<td>
+							<select id="cmbPIC" class="form-control chosen-select" style="width: 100%;">
+								<option>Select PIC</option>
+								<option>Adit</option>
+								<option>Budi</option>
+								<option>Mikel</option>
+							</select>
+						</td>
+						<td><input type="text" class="form-control" /></td>
+						<td><input type="text" class="form-control" style="width: 100%;" /></td>
+					</tr>
+					<tr>
+						<td class="text-left"  id="">Rundown Part / Line Fill</td>
+						<td class="text-center"><input type="checkbox" /></td>
+						<td class="text-center"><input type="checkbox" /></td>
+						<td>
+							<select id="cmbPIC" class="form-control chosen-select" style="width: 100%;">
+								<option>Select PIC</option>
+								<option>Adit</option>
+								<option>Budi</option>
+								<option>Mikel</option>
+							</select>
+						</td>
+						<td><input type="text" class="form-control" /></td>
+						<td><input type="text" class="form-control" style="width: 100%;" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		</br>
+		<div style="text-align: right;">
+			<button type="button" id="btnSave" onClick="btnConfirm()" style="width: 10%">Submit</button>
+			<button type="button" id="btnCancel" style="width: 10%">Cancel</button>
+		</div>
+		<br />
+		<br />		
+	</div>
+</body>
+</html>

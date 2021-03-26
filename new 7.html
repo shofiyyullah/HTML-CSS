@@ -1,0 +1,46 @@
+<html>
+	<head>
+	<link href="style.css" rel="stylesheet">
+	<title>Employee Data</title>
+	</head>
+	<body>
+	<div class="container">
+	<h1>Employee Data</h1>
+		<form id="employee_form">
+			<div class="form-group">
+			<label>Employee Name</label>
+			<input type='text'class='form-control' name='tName' id='employeeName' placeholder='Employee Name'>
+			</div>
+			<div class="form-group">
+			<label>Birth Date</label>
+			<input type='text' class='form-control' name='tbirthDate' id='birthDate' placeholder='Birth Date'>
+			</div>
+			<div class="form-group">
+			<label>Gender</label>
+			<input type='radio' name='rgender' id='Gender' value="Male">Male
+			<input type='radio' name='rgender' id='Gender' value="Male">Female
+			</div>
+			<div class="form-group">
+			<label>Hobby</label>
+			<input type='checkbox' name='chobby[]' value="Soccer" required>Soccer
+			<input type='checkbox' name='chobby[]' value="Volleyball">Volleyball
+			<input type='checkbox' name='chobby[]' value="Golf">Golf
+			</div>
+			<div class="form-group">
+			<input type='submit' id='submit' value='SUBMIT' class='btn btn-primary' onClick='btnConfirm()'>
+			</div>
+		</form>
+		</div>
+	</body>
+</html>
+
+<script> 
+	function btnConfirm(){
+	var confirmMsg = confirm('Are you sure to submit this file?');
+	if(confirmMsg==true)
+		{
+		alert('Thanks for submitting!');
+		}
+	}
+
+</script>

@@ -1,0 +1,33 @@
+<html>
+<body>
+
+<h1>JavaScript Arrays & For</h1>
+
+<p>Monthly sales reporting:</p>
+
+<p id="demo"></p>
+<p id="report"></p>
+
+</html>
+<script>
+var sales = [['Yofie', 8000], ['Dani', 7700], ['Rea', 8800]
+            , ['Somad', 9500], ['Lani', 6800]];  
+var Avgsales = 0;  
+  
+var text = "<ul>";  
+
+var rpt = "";
+  
+for (var i=0; i < sales.length; i++) {  
+        Avgsales += sales[i][1];  
+        var avg = (Avgsales/sales.length);
+		text += "<li>" + sales[i] + "</li>";
+}  
+
+text += "</ul>";
+
+rpt = "Averages sales for this month is : " + avg;
+
+document.getElementById("report").innerHTML = rpt;
+document.getElementById("demo").innerHTML = text;
+</script>

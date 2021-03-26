@@ -1,0 +1,44 @@
+<html>   
+<head>  
+<meta charset=utf-8 />  
+<title>Operator Exercise </title>  
+<style type="text/css">  
+body {margin: 30px;}  
+</style>
+</head>  
+<body>  
+<form>  
+<H1>Operator Exercise</H1>
+<table >
+<tr>
+<td>Production Cost</td>
+<td> <input type="text" id="ProdCost" />  </td>
+</tr>
+
+<tr>
+<td>Production Tax (In %)</td> 
+<td> <input type="text" id="ProdTax" /></td>
+</tr>
+
+<tr >
+<td colspan=2><input type="button" onClick="OnClickcalculate()" Value="Calculate!" /></td>
+</tr>
+<tr>  
+<td><p>Total production tax : <br>  </td>
+<td><input type="text" id="result">  </td>
+</p>
+</tr> 
+</table>
+</form> 
+</body>  
+</html>
+
+	<script>
+	function OnClickcalculate()  
+	{   
+		var	ProCost = document.getElementById("ProdCost").value;  
+		var	ProTax = document.getElementById("ProdTax").value;
+		var Res = ProCost*ProTax/100;	
+		document.getElementById("result").value = Res;  
+	} 
+	</script>   
